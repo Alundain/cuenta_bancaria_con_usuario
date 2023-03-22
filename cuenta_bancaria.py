@@ -5,11 +5,10 @@ class CuentaBancaria:
         self.balance = balance
         CuentaBancaria.todas_las_ctas.append(self)
     
-
     def hacer_deposito(self, monto):
         self.balance += monto
         return self
-
+    
     def hacer_retiro(self, monto):
         if monto > self.balance:
             self.balance -= 5
@@ -23,7 +22,7 @@ class Usuario:
         self.nombre = nombre
         self.email = email
         self.cuenta = CuentaBancaria(tasa_interes=0.02, balance=0)
-    
+
     def hacer_deposito(self):
         self.cuenta.deposito(100)
         print(self.balance.cuenta)
